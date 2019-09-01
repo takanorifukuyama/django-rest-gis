@@ -1,0 +1,19 @@
+version: "3"
+services:
+  django-api:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./django_api:/project"
+    restart: always
+    tty: true
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: FTX6Bzv1N7qHvxXg
+      MYSQL_DATABASE: aikasa_db
+      MYSQL_USER: aikasa_wp
+      MYSQL_PASSWORD: FTX6Bzv1N7q1HvxXg
+    ports:
+      - "3306:3306"
